@@ -17,18 +17,26 @@ namespace _1er_Proyecto
         public Form2()
         {
             InitializeComponent();
+            Image fondo2 = Image.FromFile(@"C: \Users\Jalil Raziel\Downloads\transparente.jpg");
+            Image fondo1 = Image.FromFile(@"C: \Users\Jalil Raziel\Downloads\untitled.png");
+            
+            listView1.BackgroundImage = fondo2;
+           
+            int i = 0;
             string sLine = "";
+            ListBox Contenedor = new ListBox();
             using (System.IO.StreamReader Lista = new System.IO.StreamReader("C:\\Users\\Jalil Raziel\\Documents\\graficas\\Nueva carpeta (2)\\ya_me_arte\\1er_Proyecto\\1er_Proyecto\\Lista.txt"))
             {
                 while (sLine != null)
                 {
                     sLine = Lista.ReadLine();
                     if (sLine != null)
-                        listView1.Items.Add(sLine);
+                    {
+                        Contenedor.Items.Add(sLine);
+                    }
                 }
             }
         }
-
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
@@ -36,6 +44,13 @@ namespace _1er_Proyecto
 
         private void label1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+
 
         }
     }

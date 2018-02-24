@@ -1,2 +1,5 @@
-System.Windows.Forms.ListBox+ObjectCollection
-3
+asd
+ewe
+rty
+uyyt
+yyrt

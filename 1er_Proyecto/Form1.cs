@@ -55,27 +55,40 @@ namespace _1er_Proyecto
 
         private void button3_Click(object sender, EventArgs e)
         {
-           
+            string sLine = "";
+            StreamReader Lista = new StreamReader("C:\\Users\\Jalil Raziel\\Documents\\graficas\\Nueva carpeta (2)\\ya_me_arte\\1er_Proyecto\\1er_Proyecto\\Lista.txt");
+            while (sLine != null)
+            {
+                sLine = Lista.ReadLine();
+                if (sLine != null)
+                {
+                    listBox1.Items.Add(sLine);
+                    Contador++;
+                }
+            }
+            Lista.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             listBox1.Items.Remove(listBox1.SelectedItem);
+            Contador--;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            int i = 0;
             StreamWriter Lista = new StreamWriter("C:\\Users\\Jalil Raziel\\Documents\\graficas\\Nueva carpeta (2)\\ya_me_arte\\1er_Proyecto\\1er_Proyecto\\Lista.txt");
-            Lista.Write(Contador);
-
-            for (int i=0,asdas ,ListBox1.Items.Count - 1)
+            while (i != Contador)
             {
-
+                Lista.WriteLine(listBox1.Items[i].ToString());
+                i++;
             }
-                Lista.Close();
+            Lista.Close();
             
             this.Hide();
             Form2 f2 = new Form2();
+            f2.Show();
         }
     }
 }
